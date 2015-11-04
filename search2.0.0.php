@@ -61,11 +61,7 @@
 
 			<?php
                 include('simple_html_dom.php');
-
                 if(isset($_POST['coder1']) && isset($_POST['coder2'])) {
-
-
-
     			$auth=base64_encode('edcguest:edcguest');
     			$Context=array('http'=>array(
 	        			'proxy'=>'tcp://172.31.102.14:3128',
@@ -78,13 +74,17 @@
 			<div>
 
 			    <?php
-
 				    $cxt=stream_context_create($Context);
 				    $coder1=$_POST['coder1'];
 				    $url1="http://www.spoj.com/users/$coder1/";
 				    $html1 = file_get_html($url1,false,$cxt);
 				    $userprofile1=$html1->find('div[id=user-profile-left]',0);
-				    $name1=$userprofile1->find('h3',0);
+
+                                    
+                       
+				       $name1=$userprofile1->find('h3',0);
+              
+
 				    $username1=$userprofile1->find('h4',0);
 				    $country1=$userprofile1->find('p',0);
 				    $joiningtime1=$userprofile1->find('p',1);
@@ -97,17 +97,12 @@
 				    $probcount1=$userstats1->find('dd',0)->plaintext;
 				    $subcount1=$userstats1->find('dd',1)->plaintext;
 				    $probtable1=$html1->find('table[class=table table-condensed]',0);
-
-
-
-
-
 				    $cxt=stream_context_create($Context);
 				    $coder2=$_POST['coder2'];
 				    $url2="http://www.spoj.com/users/$coder2/";
 				    $html2 = file_get_html($url2,false,$cxt);
 				    $userprofile2=$html2->find('div[id=user-profile-left]',0);
-				    $name2=$userprofile2->find('h3',0);
+   				    $name2=$userprofile2->find('h3',0);
 				    $username2=$userprofile2->find('h4',0);
 				    $country2=$userprofile2->find('p',0);
 				    $joiningtime2=$userprofile2->find('p',1);
@@ -129,9 +124,11 @@
 				<td align='center'>
 					<?php
 						if(isset($name1->plaintext)){
-							echo $name1->plaintext." (";
-							echo $username1->plaintext.") ".'<br>';
-						}
+							echo $name1->plaintext;
+                                                }
+
+					        echo " (".$username1->plaintext.") ".'<br>';
+						
 					?>
 				</td>
 				
@@ -141,9 +138,11 @@
 				<td align='center'>
 					<?php
 						if(isset($name2->plaintext)){
-							echo $name2->plaintext." (";
-							echo $username2->plaintext.") ".'<br>';
-						}
+							echo $name2->plaintext;
+                                                }
+                                                 
+					        echo " (".$username2->plaintext.") ".'<br>';
+						
 					?>
 				</td>
 			</tr>
