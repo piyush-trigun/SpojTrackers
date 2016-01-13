@@ -70,12 +70,10 @@
 	        			$user1=file_get_html($url1,false,$cxt);
 	        			$list=$user1->find('table[class=table table-condensed]',0);
 	        			$list1=$list->find('a');
-	        			$userstats1=$user1->find('dl',0);
-				    $probcount1=$userstats1->find('dd',0)->plaintext;
-				    $k=0;
+	        			
 				    for($i=0;$i<sizeof($list1);$i++)
 				    {
-				    	$k++;
+				    
 
 				          $list2[$i] =  $list->find('a',$i)->innertext;
 				    }
@@ -90,20 +88,22 @@
                     $user2=file_get_html($url2,false,$cxt);
                     $list10=$user2->find('table[class=table table-condensed]',0);
                     $list11=$list10->find('a');
-                    $userstats2=$user2->find('dl',0);
-                    $probcount2=$userstats2->find('dd',0)->plaintext;
-                    $k=0;
+                    
+                    
                     for($i=0;$i<sizeof($list11);$i++)
                     {
-                    	$k++;
+                    
                     	$list12[$i]=$list10->find('a',$i)->innertext;
                     }
                     $list12=array_filter($list12);
                    
                     sort($list12);
                     $compare=array_intersect($list2,$list12);
-                    $userl1=array_diff($list12,$list2);
-                    $userl2=array_diff($list2,$list12);
+                    sort($compare);
+                    $userl2=array_diff($list12,$list2);
+                    $userl1=array_diff($list2,$list12);
+                    sort($userl2);
+                    sort($userl1);
                     //print_r($compare);
                 }
                 $lik="http://www.spoj.com/problems/";
