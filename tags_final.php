@@ -8,13 +8,13 @@
 	    <script src="js/html5shiv.min.js"></script>
 	    <script src="js/respond.min.js"></script> 
 	    <script src="js/bootstrap.min.js"></script>   
-	    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	    <link href="css/jquery-ui.css" rel="stylesheet">
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/jquery-ui.js"></script>
 
         <script>
          $(function() {
-            var availableTutorials = [
+            var availableTags = [
                
 	            "math",
 				"simple math",
@@ -137,7 +137,7 @@
 				"disjoint set"
             ];
             $("#tags").autocomplete({
-               source: availableTutorials
+               source: availableTags
             });
          });
       </script>
@@ -192,12 +192,8 @@
 							  
 							    <div class="ui-widget input-group">
 							    <span class="input-group-addon" id="sizing-addon1">Problem Tag</span>
-<<<<<<< HEAD
-							    <input type="text" class="form-control" placeholder="Search for..." name='tag' id="tags">
+			                    <input type="text" class="form-control" placeholder="Search for..." name='tag' id="tags">
 							    </div>
-=======
-							    <input type="text" class="form-control" placeholder="math" name='tag'>
->>>>>>> e38b4dd29e6a2a4a70bb22f44826d06891d17d94
 							    <span class="input-group-btn">
 								    <button class="btn btn-default" type="submit">Go!</button>
 							    </span>
