@@ -18,7 +18,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 				  	</button>
-		         	<a href="#" class="navbar-brand">SpojTrackers</a>	
+		         	<div class="collapse navbar-collapse" id="navbar-collapse">
+		         	<ul class="nav navbar-nav">
+				        <li><a href="index.php">Homepage</a>
+				        <li><a href="tags_final.php">tags</a>
+				        <li><a href="compare.php">Compare</a>
+				        
+					</ul>
+		      	</div>	
 			    </div>
 		       
 		      	<div class="collapse navbar-collapse" id="navbar-collapse">
@@ -31,22 +38,22 @@
 	   	<div class="jumbotron" id="search">
 	      
 	      	<div class="container text-center">
-	      		<h1>Let the Comparison Begin!</h1>
+	      		<h1>Compare users By problems</h1>
 	      		<p></p>
 	      		
 	      		<div class="row">
 				  	<form action="compare.php" method="post">
 					  	<div class="col-lg-6">
 						    <div class="input-group">
-						      <span class="input-group-addon" id="sizing-addon1">@</span>
-						      <input type="text" class="form-control" placeholder="Search for..." name='coder1'>
+						      <span class="input-group-addon" id="sizing-addon1">username</span>
+						      <input type="text" class="form-control" placeholder="tourist" name='coder1'>
 						    </div><!-- /input-group -->
 					  	</div><!-- /.col-lg-6 -->
 						
 						<div class="col-lg-6">
 							<div class="input-group">
-							    <span class="input-group-addon" id="sizing-addon1">@</span>
-							    <input type="text" class="form-control" placeholder="Search for..." name='coder2'>
+							    <span class="input-group-addon" id="sizing-addon1">username</span>
+							    <input type="text" class="form-control" placeholder="petr" name='coder2'>
 							    <span class="input-group-btn">
 								    <button class="btn btn-default" type="submit">Go!</button>
 							    </span>
@@ -77,8 +84,14 @@
 
 				          $list2[$i] =  $list->find('a',$i)->innertext;
 				    }
+				    if(isset($list2)){
 				    $list2=array_filter($list2);
-                    sort($list2);
+                    sort($list2);}
+                    else
+                    	{?><center><h1><?php
+                    		echo "$coder1 has solved 0 problems";?> </h1></center><?php
+                    		die();
+                    		}
 
                     // for coder 2
                    
@@ -95,9 +108,14 @@
                     
                     	$list12[$i]=$list10->find('a',$i)->innertext;
                     }
+                    if(isset($list12)){
                     $list12=array_filter($list12);
                    
-                    sort($list12);
+                    sort($list12);}
+                    else{?><center><h1><?php
+                    		echo "$coder2 has solved 0 problems";?> </h1></center><?php
+                    		die();
+                    }
                     $compare=array_intersect($list2,$list12);
                     sort($compare);
                     $userl2=array_diff($list12,$list2);
@@ -105,53 +123,56 @@
                     sort($userl2);
                     sort($userl1);
                     //print_r($compare);
-                }
+                $z=count($compare);
+                if($z<count($userl1))
+                	$z=count($userl1);
+                if($z<count($userl2))
+                	$z=count($userl2);
                 $lik="http://www.spoj.com/problems/";
                     ?>
-
-                    <?php
-                     if(isset($compare)){?>
-                     <h3>Common Problems</h3>
-                   <table class="table" width='70%'>
+                     <table class="table" width='100%'>
 					<thead>
 						<tr>
 						<th><center>#</center></th>
-           				<th><center>PId</center></th>
+           				<th><center>Comman Problems</center></th>
+           				<th><center><?php echo "Problems only by ".$coder1; ?></center></th>
+           				<th><center><?php echo "Problems only by ".$coder2; ?></center></th>
            				</tr>
 
            				</thead>
            				<tbody>
-           				<?php
-           			$i=0;
-           			  
-           				foreach ($compare as $x=>$x_ind)
-					{
-						if(isset($x_ind[0]))
-							{
-								?>
-								<tr>
-						 		 	<center>
-						 		 	<td><center><?php echo $i+1; ?></center></td>
-						 		 	<td><center><font style="color : blue"> 
-                              		<a href="<?php echo $lik.$x_ind;  ?>" target="_blank">
-                                			<?php echo $x_ind ?>
-                                			</a></font></center></td>
-						 		 	</center>
-						 		 	</tr>
-						 		 	<?php
-							}	
-							$i=$i+1;
-						}
-				}
-						?>
-						</tbody>
-						</table>
-
                     <?php
-                     if(isset($userl1))
+                     
+                     for($i=0;$i<$z;$i++)
                      {
-                     	?>
-                     	<?php echo "Problems only by ".$coder1; ?></h3>
+                     		?>  
+                     				<tr>
+						 		 	<center>
+						 		 	<td><center><?php echo $i+1; ?></center></td>
+						 		 	<?php
+						if(isset($compare[$i]))
+							{
+								?>
+									
+						 		 	<td><center><font style="color : blue"> 
+                              		<a href="<?php echo $lik.$compare[$i];  ?>" target="_blank">
+                                			<?php echo $compare[$i] ?>
+                                			</a></font></center></td>
+						 		 	
+						 		 	
+						 		 	<?php
+							}else {
+								?> <td><center>----</center></td>
+								<?php 
+							}	
+							
+					
+						?>
+						
+
+                   
+                     	<!--<center><h3>
+                     	<?php //echo "Problems only by ".$coder1; ?></h3></center>
                    <table class="table" width='70%'>
 					<thead>
 						<tr>
@@ -160,36 +181,40 @@
            				</tr>
 
            				</thead>
-           				<tbody>
+           				<tbody>-->
            				<?php
-           			$i=0;
+           			
            			  
-           				foreach ($userl1 as $x=>$x_ind)
-					{
-						if(isset($x_ind[0]))
+           			
+						if(isset($userl1[$i]))
 							{
 								?>
-								<tr>
-						 		 	<center>
-						 		 	<td><center><?php echo $i+1; ?></center></td>
+								
+						 		 	
+						 		 <!--	<td><center><?php //echo $i+1; ?></center></td> -->
 						 		 	<td><center><font style="color : blue"> 
-                              		<a href="<?php echo $lik.$x_ind;  ?>" target="_blank">
-                                			<?php echo $x_ind ?>
+                              		<a href="<?php echo $lik.$userl1[$i];  ?>" target="_blank">
+                                			<?php echo $userl1[$i] ?>
                                 			</a></font></center></td>
-						 		 	</center>
-						 		 	</tr>
+						 		 	
+						 		 	
 						 		 	<?php
 							}	
-							$i=$i+1;
-						}
-				}
+							else {
+								?> <td><center>----</center></td>
+								<?php 
+							}	
+						
+				
 						?>
-						</tbody>
-						</table>
+						
 
                     <?php
-                     if(isset($userl2)){?>
-                    <?php echo "Problems only by ".$coder2; ?></h3>
+                     if(isset($userl2[$i]))
+                     	{
+                     		?>
+                   <!-- <center><h3>
+                     	<?php// echo "Problems only by ".$coder2; ?></h3></center>
                    <table class="table" width='70%'>
 					<thead>
 						<tr>
@@ -198,34 +223,31 @@
            				</tr>
 
            				</thead>
-           				<tbody>
-           				<?php
-           			$i=0;
-           			  
-           				foreach ($userl2 as $x=>$x_ind)
-					{
-						if(isset($x_ind[0]))
-							{
-								?>
-								<tr>
-						 		 	<center>
-						 		 	<td><center><?php echo $i+1; ?></center></td>
+           				<tbody> -->
+           			
+								
+						 		 	
+						 	<!--	 	<td><center><?php// echo $i+1; ?></center></td> -->
 						 		 	<td><center><font style="color : blue"> 
-                              		<a href="<?php echo $lik.$x_ind;  ?>" target="_blank">
-                                			<?php echo $x_ind ?>
+                              		<a href="<?php echo $lik.$userl2[$i];  ?>" target="_blank">
+                                			<?php echo $userl2[$i] ?>
                                 			</a></font></center></td>
-						 		 	</center>
-						 		 	</tr>
+						 		 	</center></tr>
 						 		 	<?php
-							}	
-							$i=$i+1;
+							}
+							else {
+								?> <td><center>----</center></td></tr>
+								<?php 
+							}		
+							
 						}
-				}
+				
 						?>
 						</tbody>
 						</table>
-
-	   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+						<?php
+						}
+?>	   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
 	</body>
 </html> 

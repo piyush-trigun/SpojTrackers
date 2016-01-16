@@ -19,7 +19,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 				  	</button>
-		         	<a href="#" class="navbar-brand">SpojTrackers</a>	
+		         	<div class="collapse navbar-collapse" id="navbar-collapse">
+		         	<ul class="nav navbar-nav">
+				        <li><a href="index.php">Homepage</a>
+				        <li><a href="tags_final.php">tags</a>
+				        <li><a href="compare.php">Compare</a>
+				        
+					</ul>
+		      	</div>
 			    </div>
 		       
 		      	<div class="collapse navbar-collapse" id="navbar-collapse">
@@ -32,22 +39,22 @@
 	   	<div class="jumbotron" id="search">
 	      
 	      	<div class="container text-center">
-	      		<h1>Let the Comparison Begin!</h1>
+	      		<h1>Let's see who is winner!</h1>
 	      		<p></p>
 	      		
 	      		<div class="row">
 				  	<form action="index.php" method="post">
 					  	<div class="col-lg-6">
 						    <div class="input-group">
-						      <span class="input-group-addon" id="sizing-addon1">@</span>
-						      <input type="text" class="form-control" placeholder="Search for..." name='coder1'>
+						      <span class="input-group-addon" id="sizing-addon1">username</span>
+						      <input type="text" class="form-control" placeholder="tourist" name='coder1'>
 						    </div><!-- /input-group -->
 					  	</div><!-- /.col-lg-6 -->
 						
 						<div class="col-lg-6">
 							<div class="input-group">
-							    <span class="input-group-addon" id="sizing-addon1">@</span>
-							    <input type="text" class="form-control" placeholder="Search for..." name='coder2'>
+							    <span class="input-group-addon" id="sizing-addon1">username</span>
+							    <input type="text" class="form-control" placeholder="petr" name='coder2'>
 							    <span class="input-group-btn">
 								    <button class="btn btn-default" type="submit">Go!</button>
 							    </span>

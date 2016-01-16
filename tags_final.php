@@ -155,7 +155,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 				  	</button>
-		         	<a href="#" class="navbar-brand">SpojTrackers</a>	
+		         	<div class="collapse navbar-collapse" id="navbar-collapse">
+		         	<ul class="nav navbar-nav">
+				        <li><a href="index.php">Homepage</a>
+				        <li><a href="tags_final.php">tags</a>
+				        <li><a href="compare.php">Compare</a>
+				        
+					</ul>
+		      	</div>
 			    </div>
 		       
 		      	<div class="collapse navbar-collapse" id="navbar-collapse">
@@ -168,7 +175,7 @@
 	   	<div class="jumbotron" id="search">
 	      
 	      	<div class="container text-center">
-	      		<h1>Let the Comparison Begin!</h1>
+	      		<h1>Search for Tags</h1>
 	      		<p></p>
 	      		
 	      		<div class="row">
@@ -176,7 +183,7 @@
 					  	<div class="col-lg-6">
 						    <div class="input-group">
 						      <span class="input-group-addon" id="sizing-addon1">Coder Handle</span>
-						      <input type="text" class="form-control" placeholder="username..." name='handle'>
+						      <input type="text" class="form-control" placeholder="tourist" name='handle'>
 						    </div><!-- /input-group -->
 					  	</div><!-- /.col-lg-6 -->
 						
@@ -185,8 +192,12 @@
 							  
 							    <div class="ui-widget input-group">
 							    <span class="input-group-addon" id="sizing-addon1">Problem Tag</span>
+<<<<<<< HEAD
 							    <input type="text" class="form-control" placeholder="Search for..." name='tag' id="tags">
 							    </div>
+=======
+							    <input type="text" class="form-control" placeholder="math" name='tag'>
+>>>>>>> e38b4dd29e6a2a4a70bb22f44826d06891d17d94
 							    <span class="input-group-btn">
 								    <button class="btn btn-default" type="submit">Go!</button>
 							    </span>
@@ -225,8 +236,9 @@
                             }
                         }
                         if($flag!=1)
-                        {
-                            die("No such tag exist");
+                        {?>
+                        	<center><h1>"No such tag exist"</h1></center><?php
+                            die();
                         }
                         
 
