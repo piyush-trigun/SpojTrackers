@@ -38,7 +38,7 @@
 	   	<div class="jumbotron" id="search">
 	      
 	      	<div class="container text-center">
-	      		<h1>Compare users By problems</h1>
+	      		<h1>Compare users by problems</h1>
 	      		<p></p>
 	      		
 	      		<div class="row">
