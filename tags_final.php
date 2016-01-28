@@ -192,7 +192,7 @@
 							  
 							    <div class="ui-widget input-group">
 							    <span class="input-group-addon" id="sizing-addon1">Problem Tag</span>
-			                    <input type="text" class="form-control" placeholder="Search for..." name='tag' id="tags">
+			                    <input type="text" class="form-control" placeholder="dynamic programming" name='tag' id="tags">
 							    </div>
 							    <span class="input-group-btn">
 								    <button class="btn btn-default" type="submit">Go!</button>
@@ -205,7 +205,7 @@
 	    </div>
 	    <?php
                 include('simple_html_dom.php');
-                include('proxy.php');
+           //     include('proxy.php');
 
             //    error_reporting(0);
 

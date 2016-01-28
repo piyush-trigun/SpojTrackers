@@ -46,14 +46,14 @@
 					  	<div class="col-lg-6">
 						    <div class="input-group">
 						      <span class="input-group-addon" id="sizing-addon1">username</span>
-						      <input type="text" class="form-control" placeholder="tourist" name='coder1'>
+						      <input type="text" class="form-control" placeholder="mayank_124" name='coder1'>
 						    </div><!-- /input-group -->
 					  	</div><!-- /.col-lg-6 -->
 						
 						<div class="col-lg-6">
 							<div class="input-group">
 							    <span class="input-group-addon" id="sizing-addon1">username</span>
-							    <input type="text" class="form-control" placeholder="petr" name='coder2'>
+							    <input type="text" class="form-control" placeholder="kart123" name='coder2'>
 							    <span class="input-group-btn">
 								    <button class="btn btn-default" type="submit">Go!</button>
 							    </span>
@@ -65,7 +65,7 @@
 	    </div>
 	    <?php
                 include('simple_html_dom.php');
-                include('proxy.php');
+              //  include('proxy.php');
                 if(isset($_POST['coder1']) && isset($_POST['coder2'])) {
     		    	
 		  

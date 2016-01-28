@@ -22,7 +22,7 @@
 		         	<div class="collapse navbar-collapse" id="navbar-collapse">
 		         	<ul class="nav navbar-nav">
 				        <li><a href="index.php">Homepage</a>
-				        <li><a href="tags_final.php">tags</a>
+				        <li><a href="tags_final.php">Tags</a>
 				        <li><a href="compare.php">Compare</a>
 				        
 					</ul>
@@ -69,7 +69,7 @@
 
 			<?php
                 include('simple_html_dom.php');
-                include('proxy.php');
+              //  include('proxy.php');
                 function getStringBetween($str,$from,$to)
                {
                   $sub = substr($str, strpos($str,$from)+strlen($from),strlen($str));
