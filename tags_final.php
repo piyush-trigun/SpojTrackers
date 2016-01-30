@@ -293,7 +293,7 @@
 						 		 	<center>
 						 		 	<td><center><?php echo $i+1; ?></center></td>
 						 		 	<td><center><font style="color : blue"> 
-                              		<a href="<?php echo $lik.$x_ind;  ?>" target="_blank">
+                              		<a href="<?php echo $element ?>" target="_blank">
                                 			<?php echo $element ?>
                                 			</a></font></center></td>
 						 		 	</center>
