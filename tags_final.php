@@ -205,7 +205,7 @@
 	    </div>
 	    <?php
                 include('simple_html_dom.php');
-           //     include('proxy.php');
+              //  include('proxy.php');
 
             //    error_reporting(0);
 
@@ -293,7 +293,7 @@
 						 		 	<center>
 						 		 	<td><center><?php echo $i+1; ?></center></td>
 						 		 	<td><center><font style="color : blue"> 
-                              		<a href="<?php echo $element ?>" target="_blank">
+                              		<a href="<?php echo 'http://www.spoj.com/problems/'.$element; ?>" >
                                 			<?php echo $element ?>
                                 			</a></font></center></td>
 						 		 	</center>
