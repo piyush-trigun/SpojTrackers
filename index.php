@@ -1,12 +1,23 @@
 <html>
 
 	<head>
-		<title>Search</title>
+		<title>SpojTrackers</title>
+
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/search.css">
+		<meta charset="utf-8">
+		<meta name="keywords" content="spoj, spojtrackers, spojtracker, spojtrack, compare, problem, tag"/>
+
+		<meta property="og:description" content="SpojTrackers is toolkit to compare users present in SPOJ (Sphere Online Judge).Here you can compare users on problem solved and points earned. Also you can view particular users problems by problem tags. "/>
+
+		<meta name="description" content="SpojTrackers is toolkit to compare users present in SPOJ (Sphere Online Judge).Here you can compare users on problem solved and points earned. Also you can view particular users problems by problem tags." />
+
+		<meta property="og:site_name" content="spojtrackers.herokuapp.com" />
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	    <script src="js/html5shiv.min.js"></script>
 	    <script src="js/respond.min.js"></script>
+	    <link rel="shortcut icon" href="images/f.ico" type="image/x-icon" />
 	</head>
 
 	<body>
@@ -20,10 +31,16 @@
 						<span class="icon-bar"></span>
 				  	</button>
 		         	<div class="collapse navbar-collapse" id="navbar-collapse">
+		         	
+		         		<ul class="nav navbar-nav">
+		         		 <li><a href="/"> <img src="images/logo2.png" style="float:top; height: 40px;" ></a> </li> 	
+		         		</ul>
+
 		         	<ul class="nav navbar-nav">
-				        <li><a href="index.php">Homepage</a>
-				        <li><a href="tags_final.php">Tags</a>
-				        <li><a href="compare.php">Compare</a>
+
+				        <li><a href="index.php"><h4>Homepage</h4></a>
+				        <li><a href="tags_final.php"><h4>Tags</h4></a>
+				        <li><a href="compare.php"><h4>Compare</h4></a>
 				        
 					</ul>
 		      	</div>
@@ -36,7 +53,7 @@
 		    </div>
 	   	</nav>
 
-	   	<div class="jumbotron" id="search">
+	   	<div class="jumbotron" id="search" >
 	      
 	      	<div class="container text-center">
 	      		<h1>Let's see who is winner!</h1>
