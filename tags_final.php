@@ -1,8 +1,19 @@
 <html>
 
 	<head>
-	    <meta charset="utf-8">
-		<title>Search for Tags</title>
+	    <title>SpojTrackers</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/search.css">
+		<meta charset="utf-8">
+		<meta name="keywords" content="spoj, spojtrackers, spojtracker, spojtrack, compare, problem, tag"/>
+
+		<meta property="og:description" content="SpojTrackers is toolkit to compare users present in SPOJ (Sphere Online Judge).Here you can compare users on problem solved and points earned. Also you can view particular users problems by problem tags. "/>
+
+		<meta name="description" content="SpojTrackers is toolkit to compare users present in SPOJ (Sphere Online Judge).Here you can compare users on problem solved and points earned. Also you can view particular users problems by problem tags." />
+
+		<meta property="og:site_name" content="spojtrackers.herokuapp.com" />
+        <link rel="shortcut icon" href="images/f.ico" type="image/x-icon" />
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/search.css">
 	    <script src="js/html5shiv.min.js"></script>
@@ -156,14 +167,21 @@
 						<span class="icon-bar"></span>
 				  	</button>
 		         	<div class="collapse navbar-collapse" id="navbar-collapse">
-		         	<ul class="nav navbar-nav">
-				        <li><a href="index.php">Homepage</a>
-				        <li><a href="tags_final.php">tags</a>
-				        <li><a href="compare.php">Compare</a>
+		         	
+		         		<ul class="nav navbar-nav">
+		         		 <li><a href="/"> <img src="images/logo2.png" style="float:top; height: 40px;" ></a> </li> 	
+		         		</ul>
 
+		         	<ul class="nav navbar-nav">
+
+				        <li><a href="index.php"><h4>Homepage</h4></a>
+				        <li><a href="tags_final.php"><h4>Tags</h4></a>
+				        <li><a href="compare.php"><h4>Compare</h4></a>
+				        
 					</ul>
 		      	</div>
 			    </div>
+		       
 
 		      	<div class="collapse navbar-collapse" id="navbar-collapse">
 		         	<ul class="nav navbar-nav">
@@ -205,7 +223,7 @@
 	    </div>
 	    <?php
                 include('simple_html_dom.php');
-                include('proxy.php');
+                //include('proxy.php');
 
             //    error_reporting(0);
 
@@ -213,9 +231,10 @@
 
     	            	$handle=$_POST['handle'];
     	            	$tag=$_POST['tag'];
-                        $cxt=stream_context_create($Context);
+                       // $cxt=stream_context_create($Context);
                         $url="http://www.spoj.com/problems/tags";
-	        			$user1=file_get_html($url,false,$cxt);
+	        			$user1=file_get_html($url);
+	        			//echo $user1;
 
                         $list1=$user1->find('table[class=table table-condensed]',0);
                         $list2 = $list1->find('div a');
@@ -237,10 +256,11 @@
                             die();
                         }
 
-
+                        //echo $link;
                         $url_prob_tag="http://www.spoj.com".$link;
 
-                        $prob_tag=file_get_html($url_prob_tag,false,$cxt);
+
+                        $prob_tag=file_get_html($url_prob_tag);
                         //print_r($prob_tag);
                         $prob_list=$prob_tag->find('td[align="left"]');
                         foreach($prob_list as $element)
@@ -252,7 +272,7 @@
                         sort($item);
 
                         $url11="http://www.spoj.com/users/".$handle;
-                        $user11=file_get_html($url11,false,$cxt);
+                        $user11=file_get_html($url11);
                         $list_1=$user11->find('table[class=table table-condensed]',0);
                         $list_2=$list_1->find('a');
 

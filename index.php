@@ -13,11 +13,11 @@
 		<meta name="description" content="SpojTrackers is toolkit to compare users present in SPOJ (Sphere Online Judge).Here you can compare users on problem solved and points earned. Also you can view particular users problems by problem tags." />
 
 		<meta property="og:site_name" content="spojtrackers.herokuapp.com" />
-
+        
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	    <script src="js/html5shiv.min.js"></script>
 	    <script src="js/respond.min.js"></script>
-	    <link rel="shortcut icon" href="images/f.ico" type="image/x-icon" />
+	    
 	</head>
 
 	<body>
@@ -52,7 +52,7 @@
 		      	</div>
 		    </div>
 	   	</nav>
-
+        
 	   	<div class="jumbotron" id="search" >
 	      
 	      	<div class="container text-center">
@@ -113,7 +113,7 @@
 				//    $cxt=stream_context_create($Context);
 				    $coder1=$_POST['coder1'];
 				    $url1="http://www.spoj.com/users/$coder1/";
-				    $html1 = file_get_html($url1,false,$cxt);
+				    $html1 = file_get_html($url1);
 				    $userprofile1=$html1->find('div[id=user-profile-left]',0);
 				    $name1=$userprofile1->find('h3',0);
 				    $username1=$userprofile1->find('h4',0);
@@ -140,7 +140,7 @@
 				//    $cxt=stream_context_create($Context);
 				    $coder2=$_POST['coder2'];
 				    $url2="http://www.spoj.com/users/$coder2/";
-				    $html2 = file_get_html($url2,false,$cxt);
+				    $html2 = file_get_html($url2);
 				    $userprofile2=$html2->find('div[id=user-profile-left]',0);
 				    $name2=$userprofile2->find('h3',0);
 				    $username2=$userprofile2->find('h4',0);
