@@ -6,6 +6,7 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/search.css">
 		<meta charset="utf-8">
+		<link rel="shortcut icon" href="images/f.ico" type="image/x-icon" />
 		<meta name="keywords" content="spoj, spojtrackers, spojtracker, spojtrack, compare, problem, tag"/>
 
 		<meta property="og:description" content="SpojTrackers is toolkit to compare users present in SPOJ (Sphere Online Judge).Here you can compare users on problem solved and points earned. Also you can view particular users problems by problem tags. "/>
