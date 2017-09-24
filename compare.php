@@ -18,6 +18,14 @@
 	    <script src="js/html5shiv.min.js"></script>
 	    <script src="js/respond.min.js"></script>
 	    <link rel="shortcut icon" href="images/f.ico" type="image/x-icon" />
+	    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4617434172889363",
+            enable_page_level_ads: true
+            });
+            </script>
+		
 	</head>
 
 	<body>
